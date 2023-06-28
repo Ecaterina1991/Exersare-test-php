@@ -11,10 +11,7 @@ if($conn->connect_error) {
 }
 echo "Conexiune cu succes 1!";
 
-// if(mysqli_connect_error()) {
-//   die("Conexiune esuata" . mysqli_connect_error());
-// }
-// echo "Conexiune cu succes prin verificare de tip mysqli_connect_error()";
+
 
 
 
@@ -25,16 +22,7 @@ echo "Conexiune cu succes 1!";
 // }
 // echo "Conexiune reusita prin mysqli procedural";
 
-//PDO
 
-// try {
-//   $conn = new PDO("mysql:host=$servername; dbname=$database", $username, $password);
-//   //set the PDO error mode to exception
-//   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//   echo "Connected successfully PDO";
-// } catch (PDOException $e) {
-//   echo "Connection failed:" . $e->getMessage();
-// }
 
 //Create a MySql Database 
 
