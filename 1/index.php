@@ -251,68 +251,155 @@
 // echo $factorial;
 
 // 10.	Utilizând bucla while, afișează toate numerele prime mai mici decât 100.
+//daca se divid la i fara rest nu sunt prime pt ca au divizori
 
-//nr prim este un numar care se divide doar la 1 si la el insusi.
-// $i=1;
-// while($i<100) {
+//???
 
-//   $i++;
+// 7. 4 exercitii pentru ( if else, else, if, switch )
+
+// 1.	Exercițiul if-else: Verifică dacă un număr este pozitiv sau negativ și afișează un mesaj corespunzător.
+
+// $nr = -32;
+
+// if($nr>0) {
+//   echo "Numarul este pozitiv";
+// } 
+// else if($nr<0){
+//   echo "Numarul este negativ";
 // }
 
-// $isTrue = true;
 
-// for($i=1; $i<=100; $i++) {
+// 2.	Exercițiul if-elseif-else: Verifică vârsta utilizatorului și afișează un mesaj corespunzător în funcție de aceasta:
+// •	Dacă vârsta este sub 18, afișează "Ești minor."
+// •	Dacă vârsta este între 18 și 65, afișează "Ești adult."
+// •	Dacă vârsta depășește 65, afișează "Ești senior."
 
+// $varsta1=-85;
+// $varsta = abs($varsta1);
+
+// if($varsta<18) {
+//   echo "Esti minor";
+// }
+// elseif($varsta>=18 && $varsta<=65) {
+//   echo "Esti adult";
+// }
+// else{
+//   echo "Esti senior";
 // }
 
-//FUNCTII
-//https://www.php.net/manual/en/indexes.functions.php
 
-//1.
-$abs = abs(-150);
-echo $abs."<br>";
-//transforma nr negative in pozitive
+// 3.	Exercițiul switch: Verifică ziua săptămânii și afișează un mesaj corespunzător în funcție de aceasta:
+// •	Dacă ziua este "Luni" sau "Marți", afișează "Început de săptămână."
+// •	Dacă ziua este "Miercuri" sau "Joi", afișează "Mijloc de săptămână."
+// •	Dacă ziua este "Vineri", afișează "Aproape weekend."
+// •	Dacă ziua este "Sâmbătă" sau "Duminică", afișează "Weekend!"
 
-//2. functia inversa cosinusului
-$acos = acos(0);
-echo $acos."<br>"; //1.57...
-// Returnează arcul cosinus al lui num în radiani. acos() este funcția inversă a lui cos(), ceea ce înseamnă că $num == cos(acos($num)) pentru fiecare valoare a lui a care se află în intervalul acos()'.
+// $zi="Duminică";
 
-//3.
-$acosh = acosh(5);
-echo $acosh."<br>";//2.29...
-//Returnează cosinusul hiperbolic invers al lui num, adică valoarea al cărei cosinus hiperbolic este num.
-
-//4. add+c+slash-es
-$string = "sunt string";
-$caracter = "ui";
-$addcslashes = addcslashes($string, $caracter);
-echo $addcslashes."<br>";
-//Returnează un șir cu bare oblice inverse înaintea caracterelor care sunt listate în parametrul caractere.
-
-//5.
-$input="I'll be a great programmer";
-$output=addslashes($input);
-echo $output."<br>";
-//adauga caractere escape inaintea unor caractere speciale precum ghilimelele si caracterele de escape.
-
-//6. construieste o noua instanta de atribut
-//public AllowDynamicProperties::__construct()
-
-//7.
-//apache_child_terminate(): void
-//odata ce executia codului php este finalizata, va inregistra executarea procesului Apache de executie a cererii php curente pentru finalizare. Poate fi folosit pentru a termina un proces, după ce a fost rulat un script cu un consum mare de memorie, deoarece memoria va fi de obicei eliberată doar intern, dar nu va fi restituită sistemului de operare. Funcționează în serverele web Apache și FastCGI.
-
-//8. preia o variabila al mediului de executie Apache specificata
-
-// $address = $apache_getenv("SERVER_ADDR");
-// echo $address;
-
-//9. 
+// switch($zi) {
+//   case "Luni":
+//   case "Marti":
+//     echo "Inceput de saptamana";
+//     break;
+//   case "Miercuri":
+//   case "Joi":
+//     echo "Mijloc de saptamana";
+//     break;
+//   case "Vineri":
+//     echo "Aproape weekend";
+//     break;
+//   case "Sambata":
+//   case "Duminica":
+//     echo "Weekend!";
+//     break;
+//   default:
+//     echo "Ati introdus altceva decat zilele saptamanii sau ati folosit diacritice. Incercati sa nu folositi diacritice";
+//   break;
+// }
 
 
 
+// 4.	Exercițiul if-else înlănțuit: Verifică dacă un an este bisect și afișează un mesaj corespunzător. Un an bisect este divizibil cu 4, dar nu este divizibil cu 100, cu excepția cazului în care este divizibil cu 400.
 
+// $an = 2400;
+
+// if($an%4==0 && !($an%100==0)) {
+//   if($an%400==0) {
+//     echo "Anul nu este bisect(exceptie)";
+//   } else {
+//    echo "An bisect.";
+//   }
+// }
+// else {
+//   echo "Anul nu este bisect.";
+// }
+
+
+
+//8. Functii anonime, exercitiu
+//functia anonima nu are nume, poate fi atribuita unei variabile si folosita ulterior de ex in callback functions. este flexibila
+
+// TODO: Definiți o funcție anonimă care să primească un număr și să returneze pătratul acestuia.
+// TODO: Apelați funcția anonimă cu un număr și stocați rezultatul într-o variabilă.
+// TODO: Afișați rezultatul stocat în variabilă.
+
+// $anonim = function($a) { 
+//   $result= pow($a, 2);
+//   echo $result;
+//  };
+ 
+//  $anonim(5);
+//  $anonim(10);
+//  $anonim(15);
+//  $anonim(25);
+
+//9. Functia care nu stie cate numere o sa fie de afisat (Splat ) => exercitiu 
+
+// function mister(...$numere) {
+//   foreach($numere as $numar)
+// {
+//   echo $numar."<br>";
+// }
+// }
+
+// $rezultat = mister(4,4, 4,5,9);
+// echo $rezultat;
+
+//10.	Diferenta dintre $_SERVER, $_POST, $_GET
+
+/*
+$_SERVER - se prezinta ca un array asociativ de tip cheie valoare.  cu ajutorul acestei variabile superglobale obtinem informatii despre server si mediul de executie. adica putem afla adresa URL, ip-ul clientului, metoda folosita in HTTP, informatii despre server. putem extrage informatii despre cererea HTTP a clientului sau despre server. spre exemplu $_SERVER['REQUEST_METHOD'] returneaza metoda http folosita: $_GET sau $_POST;
+ 
+$_POST - este o variabila superglobala. este un array asociativ cheie valoare in care cheia reprezinta numele inputului si valoarea este cea introdusa in formular de catre utilizator. se utilizeaza atunci cand trebuie sa dam submit, se foloseste pentru informatii confidentiale, intrucat transferul de date de se face in corpul cererii http. se foloseste pentru cantitati mari de date introduse.ex: cu $_POST['username'] putem citi valoarea introdusa in formular din inputul cu numele username 
+
+$_GET - este o variabila superglobala. este un array asociativ cheie valoare in care aceste doua elemente sunt reprezentate in URL sub forma de parametri inserati www.website.com?cheie1=valoare1&cheie2=valoare2. se utilizeaza pentru informatii neconfidentiale intrucat cererea http se transmite prin antetul cererii. in exemplul dat putem citi valoarea 1 din URL cu $_GET['cheie1']. variabila poate fi asignata unei variabile si utilizata ulterior.
+
+
+*/
+
+//11.	Afisarea array-ului in toate formele posibile
+
+$arr = [8,9,5,5,4,7,6,1];
+
+//1. var_dump
+
+//var_dump($arr);
+//2. print_r
+
+//print_r($arr);
+
+//3.foreach (I)
+
+// foreach($arr as $item) {
+//   echo $item."<br>";
+// }
+
+//+inca o versiune pentru foreach
+
+// 12. Crearea unui baza de date SQL  ( cu tabele, coloane, randuri ) 
+// Conexiunea la baza de date PHP
+// Inserarea in baza de date => formular register
+// afișarea utilizatorilor din baza de date utilizând bucla while
 
 
 ?>
